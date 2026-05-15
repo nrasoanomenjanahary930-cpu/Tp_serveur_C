@@ -1,5 +1,4 @@
 
-```markdown
 
 ### 1. Nettoyer les anciens fichiers
 ```bash
