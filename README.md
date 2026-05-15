@@ -1,17 +1,5 @@
 
----
-
-## 📄 README.md
-
 ```markdown
-# Serveur UNIX Complet - TP Final
-
-
----
-
----
-
-## 🔧 COMPILATION
 
 ### 1. Nettoyer les anciens fichiers
 ```bash
@@ -24,7 +12,7 @@ make
 ```
 
 
-### 4. Vérifier que la compilation a réussi
+### 3. Vérifier que la compilation a réussi
 ```bash
 ls -la myserverd
 ```
@@ -32,7 +20,7 @@ ls -la myserverd
 
 ---
 
-## 🚀 EXÉCUTION - PARTIE 1 (Itératif)
+##  EXÉCUTION - PARTIE 1 (Itératif)
 
 ### Lancer le serveur
 ```bash
