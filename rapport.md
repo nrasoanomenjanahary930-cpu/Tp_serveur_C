@@ -312,7 +312,7 @@ syslog(LOG_ERR, "fork() échoué : %m");
 
 ### Configuration syslog
 
-**Capture d'écran 7 :** Configuration syslog
+**Capture d'écran 7 :** configuration syslog
 
 ![Partie 5 - Configuration syslog](screenshots/partie5_config.png)
 
