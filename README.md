@@ -1,6 +1,4 @@
 
-Voici un **README.md** complet pour guider la compilation et l'exécution du projet.
-
 ---
 
 ## 📄 README.md
@@ -8,32 +6,8 @@ Voici un **README.md** complet pour guider la compilation et l'exécution du pro
 ```markdown
 # Serveur UNIX Complet - TP Final
 
-## Description
-Ce projet implémente un serveur TCP complet avec 5 modèles architecturaux différents:
-- **Partie 1** : Serveur itératif
-- **Partie 2** : Serveur avec fork()
-- **Partie 3** : Serveur multi-thread (pthread)
-- **Partie 4** : Serveur avec select()
-- **Partie 5** : Serveur en mode daemon
 
 ---
-
-## 📁 Structure du projet
-
-```
-tp_final/
-├── include/
-│   └── server.h
-├── src/
-│   ├── main.c
-│   ├── server_iterative.c
-│   ├── server_fork.c
-│   ├── server_thread.c
-│   ├── server_select.c
-│   └── server_daemon.c
-├── Makefile
-└── README.md
-```
 
 ---
 
@@ -49,17 +23,12 @@ make clean
 make
 ```
 
-### 3. Compilation complète (nettoyer + compiler)
-```bash
-make clean && make
-```
 
 ### 4. Vérifier que la compilation a réussi
 ```bash
 ls -la myserverd
 ```
 
-**Résultat attendu:** Un fichier `myserverd` (vert) doit apparaître.
 
 ---
 
@@ -83,7 +52,7 @@ echo "Bonjour" | nc localhost 9999
 
 ---
 
-## 🚀 EXÉCUTION - PARTIE 2 (Fork)
+##  EXÉCUTION - PARTIE 2 (Fork)
 
 ### Lancer le serveur
 ```bash
@@ -102,7 +71,7 @@ ps aux | grep myserverd | grep -v grep
 
 ---
 
-## 🚀 EXÉCUTION - PARTIE 3 (Thread)
+##  EXÉCUTION - PARTIE 3 (Thread)
 
 ### Lancer le serveur
 ```bash
@@ -121,7 +90,7 @@ ps -eLf | grep myserverd | grep -v grep
 
 ---
 
-## 🚀 EXÉCUTION - PARTIE 4 (Select)
+##  EXÉCUTION - PARTIE 4 (Select)
 
 ### Lancer le serveur
 ```bash
@@ -140,7 +109,7 @@ for i in {1..5}; do (echo "Select $i" | nc -q 1 localhost 9999) & done
 
 ---
 
-## 🚀 EXÉCUTION - PARTIE 5 (Daemon)
+##  EXÉCUTION - PARTIE 5 (Daemon)
 
 ### Lancer le daemon (nécessite sudo)
 ```bash
@@ -176,131 +145,3 @@ sudo pkill myserverd
 
 ---
 
-## 📋 COMMANDES RAPIDES AVEC MAKEFILE
-
-| Commande | Description |
-|----------|-------------|
-| `make` | Compiler le projet |
-| `make clean` | Nettoyer les fichiers objets |
-| `make distclean` | Nettoyer tout (objets + exécutable) |
-| `make test1` | Lancer serveur itératif |
-| `make test2` | Lancer serveur fork |
-| `make test3` | Lancer serveur thread |
-| `make test4` | Lancer serveur select |
-| `make test5` | Lancer daemon (sudo) |
-| `make stop` | Arrêter le serveur |
-| `make status` | Vérifier si le serveur tourne |
-| `make logs` | Voir les logs en temps réel |
-| `make valgrind` | Vérifier les fuites mémoire |
-| `make help` | Afficher l'aide |
-
----
-
-## ⚠️ DÉPANNAGE
-
-### Erreur: "Address already in use"
-```bash
-sudo fuser -k 9999/tcp
-```
-
-### Erreur: "nc: command not found"
-```bash
-sudo apt install netcat-openbsd
-```
-
-### Erreur: "Permission denied"
-```bash
-chmod +x myserverd
-```
-
-### Erreur: "make: command not found"
-```bash
-sudo apt install make
-```
-
-### Erreur: "gcc: command not found"
-```bash
-sudo apt install gcc
-```
-
----
-
-## 📝 VÉRIFICATION RAPIDE
-
-```bash
-# 1. Compiler
-make clean && make
-
-# 2. Tester partie 1
-./myserverd iterative &  # serveur en arrière-plan
-sleep 1
-echo "Test" | nc localhost 9999
-pkill myserverd
-
-# 3. Tester partie 5 (daemon)
-sudo ./myserverd daemon
-sleep 2
-ps aux | grep myserverd
-echo "Test" | nc localhost 9999
-sudo pkill myserverd
-```
-
----
-
-## ✅ RÉSUMÉ DES COMMANDES ESSENTIELLES
-
-```bash
-# Compilation
-make clean && make
-
-# Partie 1
-./myserverd iterative
-
-# Partie 2
-./myserverd fork
-
-# Partie 3
-./myserverd thread
-
-# Partie 4
-./myserverd select
-
-# Partie 5
-sudo ./myserverd daemon
-
-# Arrêter
-pkill myserverd
-```
-
----
-
-**Bon test! 🚀**
-```
-
----
-
-## 💾 Sauvegarder le README
-
-```bash
-cd ~/tp_final
-nano README.md
-```
-
-**Copier-coller** le contenu ci-dessus, puis:
-
-```bash
-Ctrl + O → Enter → Ctrl + X
-```
-
----
-
-## ✅ Vérifier que le README est bien créé
-
-```bash
-ls -la README.md
-cat README.md | head -20
-```
-
----
-
-**Voilà! Tu as maintenant un README complet pour guider la compilation et l'exécution à chaque partie.** 🎯
